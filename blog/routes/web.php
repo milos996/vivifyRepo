@@ -13,4 +13,4 @@
 
 Route::get('/home', function () {
     return "Hellooo";
-});
+})->middleware('home');

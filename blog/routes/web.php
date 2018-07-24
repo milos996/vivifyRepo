@@ -11,6 +11,4 @@
 |
 */
 
-Route::get('/home', function () {
-    return "Hellooo";
-})->middleware('home');
+Route::get('/home', 'HomeController@ispisLog')->middleware('home');

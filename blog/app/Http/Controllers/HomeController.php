@@ -7,16 +7,17 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
 
-  public function __construct(){
+    public function __construct()
+    {
 
-    $this->middleware('home');
+      $this->middleware('home');
+    }
 
-  }
 
-    //
-    public function showContent(){
-      \Log::info("U kontroleru si");
+    public function showContent()
+    {
 
-      return view('child1', ['name' => "Milos"]);
+        \Log::info('U kontroleru si');
+        return view('child1', ['name' => 'Milos']);
     }
 }

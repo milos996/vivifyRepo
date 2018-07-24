@@ -15,7 +15,8 @@ class HomeMiddleware
      */
     public function handle($request, Closure $next)
     {
-        \Log::info("Nesto pise");
+
+        \Log::info('Nesto pise');
         return $next($request);
     }
 }

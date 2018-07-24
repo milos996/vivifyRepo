@@ -1,3 +1,5 @@
 <?php
 
-Route::get('/home', 'HomeController@showContent')->middleware('home');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

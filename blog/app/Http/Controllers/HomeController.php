@@ -14,9 +14,9 @@ class HomeController extends Controller
   }
 
     //
-    public function ispisLog(){
+    public function showContent(){
       \Log::info("U kontroleru si");
 
-      return "Cao od kontrolera!";
+      return view('child1', ['name' => "Milos"]);
     }
 }

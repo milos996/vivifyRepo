@@ -40,6 +40,15 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
+    /**
+     * Show the application registration form.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showRegistrationForm()
+    {
+        return view('auth.register',['countrys' => ['Serbia', 'Bosna and Hercegovina']]);
+    }
 
     /**
      * Get a validator for an incoming registration request.

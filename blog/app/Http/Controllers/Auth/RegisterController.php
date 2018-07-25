@@ -49,7 +49,7 @@ class RegisterController extends Controller
     public function showRegistrationForm()
     {
         $countries = DB::table('countries')->get();
-        \Log::info($countries);
+
         return view('auth.register', ['countries' => $countries]);
     }
 
@@ -67,6 +67,7 @@ class RegisterController extends Controller
             'first_name' => 'required|string',
             'last_name' => 'required|string',
             'company' => 'required|string',
+            'country' => 'required|string|exists:countries,full_name',
         ]);
     }
 

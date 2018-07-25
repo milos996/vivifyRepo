@@ -54,7 +54,7 @@
                             <label for="firstName" class="col-md-4 col-form-label text-md-right">{{ __('First name') }}</label>
 
                             <div class="col-md-6">
-                                <input id="firstName" type="text" class="form-control{{ $errors->has('firstName') ? ' is-invalid' : '' }}" name="firstName" value="{{ old('firstName') }}" required autofocus>
+                                <input id="firstName" type="text" class="form-control{{ $errors->has('firstName') ? ' is-invalid' : '' }}" name="first_name" value="{{ old('firstName') }}" required autofocus>
 
                                 @if ($errors->has('firstName'))
                                     <span class="invalid-feedback" role="alert">
@@ -69,7 +69,7 @@
                             <label for="lastName" class="col-md-4 col-form-label text-md-right">{{ __('Last name') }}</label>
 
                             <div class="col-md-6">
-                                <input id="lastName" type="text" class="form-control{{ $errors->has('lastName') ? ' is-invalid' : '' }}" name="lastName" value="{{ old('lastName') }}" required autofocus>
+                                <input id="lastName" type="text" class="form-control{{ $errors->has('lastName') ? ' is-invalid' : '' }}" name="last_name" value="{{ old('lastName') }}" required autofocus>
 
                                 @if ($errors->has('lastName'))
                                     <span class="invalid-feedback" role="alert">
@@ -97,10 +97,10 @@
                             <label for="country" class="col-md-4 col-form-label text-md-right">{{ __('Country') }}</label>
 
                             <div class="col-md-6">
-                                <select class="custom-select">
-                                    @foreach ($countrys as $country)
-                                        <option value="{{$country}}">
-                                            {{ $country }}
+                                <select id="country" class="custom-select" name="country">
+                                    @foreach ($countries as $country)
+                                        <option value='{{ $country->full_name }}'>
+                                            {{ $country->full_name }}
                                         </option>
                                     @endforeach
                                 </select>
